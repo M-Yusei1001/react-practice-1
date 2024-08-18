@@ -1,10 +1,20 @@
-import { StrictMode } from 'react'
+import { createContext, StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
-import './index.css'
+
+const userInfo = {
+  name:"SmartFalcon",
+  type:"Dirt"
+};
+
+const UserInfoContext = createContext(userInfo);
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+  <UserInfoContext.Provider value = { userInfo }>
+    <StrictMode>
+        <App />
+    </StrictMode>
+  </UserInfoContext.Provider>
+);
+
+export default UserInfoContext; 
