@@ -8,6 +8,10 @@ export default defineConfig({
     //Viteはデフォのままだと（仮想環境の）内部のみアクセス許可がある。
     //外部（元のOS上）のブラウザからアクセス出来るようにするには、host:trueが必要
     host: true,
-    port: 3000
+    port: 3000,
+    watch: {
+      usePolling: true,
+      interval: 1000
+    }
   }
 })
